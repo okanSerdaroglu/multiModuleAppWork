@@ -18,7 +18,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-        buildConfigField(type = "String", name = "apiKey", value = properties["apiKey"].toString())
+        //buildConfigField(type = "String", name = "apiKey", value = properties["apiKey"].toString())
     }
 
     buildTypes {
