@@ -1,9 +1,9 @@
-package com.core.network.data_providers
+package com.core.network.data_sources
 
 import com.core.network.ApiService
 import javax.inject.Inject
 
-class MovieDataProviders
+class MovieRemoteDataSource
 @Inject constructor(
     private val apiService: ApiService
 ) {

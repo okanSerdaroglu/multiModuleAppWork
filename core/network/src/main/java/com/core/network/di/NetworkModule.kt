@@ -1,7 +1,7 @@
 package com.core.network.di
 
 import com.core.network.ApiService
-import com.core.network.data_providers.MovieDataProviders
+import com.core.network.data_sources.MovieRemoteDataSource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,8 +21,8 @@ object NetworkModule {
     }
 
     @Provides
-    fun provideMovieDataProvider(apiService: ApiService):MovieDataProviders {
-        return MovieDataProviders(apiService)
+    fun provideMovieDataProvider(apiService: ApiService):MovieRemoteDataSource {
+        return MovieRemoteDataSource(apiService)
     }
 
 }

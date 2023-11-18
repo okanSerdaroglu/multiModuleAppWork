@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.dagger.hilt.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -53,6 +55,8 @@ android {
 dependencies {
 
     implementation(Deps.core)
+    implementation(DaggerHilt.hilt)
+    implementation(DaggerHilt.hiltCompiler)
     implementation(Deps.runtime)
     implementation(Deps.compose)
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
@@ -60,6 +64,11 @@ dependencies {
     implementation(Deps.graphics)
     implementation(Deps.preview)
     implementation(Deps.material3)
+    implementation(project(mapOf("path" to ":feature:movie:ui")))
+    implementation(project(mapOf("path" to ":core:common")))
+    implementation(project(mapOf("path" to ":core:feature_api")))
+
+    implementation(JetpackCompose.navigation)
     testImplementation(Deps.junit)
     androidTestImplementation(Deps.junit)
     androidTestImplementation(Deps.jUnitAndroid)

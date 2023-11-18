@@ -11,6 +11,10 @@ object Version {
     const val dagger = "2.44"
     const val hiltCompiler = "1.0.0"
     const val hiltComposeNavigation = "1.0.0"
+    const val composeUiVersion = "1.3.3"
+    const val composeActivity = "1.6.1"
+    const val composeMaterial = "1.3.1"
+    const val composeNavigation = "2.6.0-alpha05"
 }
 
 object Retrofit {
@@ -26,6 +30,15 @@ object DaggerHilt {
     const val hiltCompiler = "com.google.dagger:hilt-compiler:${Version.dagger}"
     const val hiltComposeNavigation =
         "androidx.hilt:hilt-navigation-compose:${Version.hiltComposeNavigation}"
+}
+
+object JetpackCompose {
+    const val composeActivity = "androidx.activity:activity-compose:${Version.composeActivity}"
+    const val composeUi = "androidx.compose.ui:ui:${Version.composeUiVersion}"
+    const val composeUiToolingPreview =
+        "androidx.compose.ui:ui-tooling-preview:${Version.composeUiVersion}"
+    const val composeMaterial = "androidx.compose.material:material:${Version.composeMaterial}"
+    const val navigation = "androidx.navigation:navigation-compose:${Version.composeNavigation}"
 }
 
 object Deps {

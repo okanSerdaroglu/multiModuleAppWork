@@ -1,6 +1,6 @@
 package com.feature.movie.data.di
 
-import com.core.network.data_providers.MovieDataProviders
+import com.core.network.data_sources.MovieRemoteDataSource
 import com.feature.movie.data.repository.MovieRepositoryImpl
 import com.feature.movie.domain.repository.MovieRepository
 import dagger.Module
@@ -12,7 +12,7 @@ import dagger.hilt.components.SingletonComponent
 @Module
 object DataLayerModule {
     @Provides
-    fun provideMovieRepo(movieDataProviders: MovieDataProviders): MovieRepository {
+    fun provideMovieRepo(movieDataProviders: MovieRemoteDataSource): MovieRepository {
         return MovieRepositoryImpl(movieDataProviders)
     }
 }
