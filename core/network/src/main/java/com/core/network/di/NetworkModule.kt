@@ -1,6 +1,7 @@
 package com.core.network.di
 
 import com.core.network.ApiService
+import com.core.network.data_providers.MovieDataProviders
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,6 +18,11 @@ object NetworkModule {
         return Retrofit.Builder().baseUrl("https://api.themoviedb.org/3/")
             .addConverterFactory(GsonConverterFactory.create()).build()
             .create(ApiService::class.java)
+    }
+
+    @Provides
+    fun provideMovieDataProvider(apiService: ApiService):MovieDataProviders {
+        return MovieDataProviders(apiService)
     }
 
 }
